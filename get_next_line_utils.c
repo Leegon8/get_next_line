@@ -57,11 +57,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*s3;
 	size_t	total;
-	//size_t	i;
-	//size_t	j;
 
-	//i = 0;
-	//j = 0;
 	if (!s1 || !s2)
 		return (0);
 	total = ft_strlen((char *)s1) + ft_strlen((char *)s2);;
@@ -70,12 +66,49 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return (0);
 	ft_strlcat(s3, s1, total + 1);
 	ft_strlcat(s3, s2, total + 1);
-	/*while (j < i)
-	{
-		ft_strlcat(s3, s1, total);
-		j++;
-		if (s2[j + 1])
-			ft_strlcat(s3, s1, total);
-	}*/
 	return (s3);
 }
+
+char	*ft_strchr(const char *s, int c)
+{
+	while (*s != '\0' && (*s != (char)c))
+	{
+		s++;
+	}
+	if (*s == (char)c)
+		return ((char *)s);
+	return ((char *) NULL);
+}
+
+void	*ft_malloc_zero(size_t count, size_t size)
+{
+	unsigned char	*p;
+	void	*r;
+	size_t	total;
+
+	total = count * size;
+	r = malloc(total);
+	if (!r)
+		return (NULL);
+	p = (unsigned char *)r;
+	while (total != 0)
+	{
+		*p = '\0';
+		p++;
+		total--;
+	}
+	return (r);
+}
+
+void	*ft_memset(void *s, int c, size_t n)
+{
+	unsigned char	*ptr;
+
+	ptr = (unsigned char *)s;
+	while (n--)
+	{
+		*ptr++ = (unsigned char)c;
+	}
+	return (s);
+}
+
