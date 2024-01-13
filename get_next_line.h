@@ -17,17 +17,14 @@
 # endif
 
 //----------- GNL -------------
-char	*get_before_newline(const char *s);
-char	*get_after_newline(const char *s);
+char	*ft_free(char **str);
+char	*ft_clean(char *str);
+char	*find_newline(char *str);
+char	*read_bytes(int fd, char *str);
 char	*get_next_line(int fd);
-char	*join_and_free(char *line, char *buffer, int *new_line);
-char	*new_line(char *buffer);
 //---------- UTILS -----------
-char	*ft_strdup(const char *src);
-int		ft_strlen(char *str);
-size_t	ft_strlcat(char *dst, const char *src, size_t n);
-char	*ft_strjoin(char const *s1, char const *s2);
+size_t	ft_strlen(char *str);
+char	*ft_strjoin(char *s1, char *s2);
 char	*ft_strchr(const char *s, int c);
-void	*ft_malloc_zero(size_t count, size_t size);
-void    *ft_memset(void *s, int c, size_t n);
+char	*ft_substr(char *s, unsigned int start, size_t len);
 #endif
