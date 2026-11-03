@@ -69,7 +69,7 @@ char	*ft_substr(char *s, unsigned int start, size_t len)
 	if (!res)
 		return (NULL);
 	i = -1;
-	while (++i < len && start < ft_strlen(s) && s[start])
+	while (++i < len && s[start])
 		res[i] = s[start++];
 	res[i] = '\0';
 	return (res);
