@@ -63,6 +63,7 @@ char	*read_bytes(int fd, char *str)
 			str = ft_strjoin(str, buffer);
 		}
 	}
+	free (buffer);
 	if (rid == -1)
 		return (ft_free(&str));
 	return (str);
